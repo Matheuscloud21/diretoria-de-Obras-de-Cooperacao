@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  height: 140px;
+}
+
+header #navbar {
+  flex-direction: column;
+}
+
+header #nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 80px;
+}
+
+header #nav-top .logo-pesquisa {
+  display: flex;
+  align-items: center;
+}
+
+.logo-pesquisa a {
+  text-decoration: none;
+  color: #207ca8;
+
+  padding-left: 3rem;
+}
+
+.nav-list {
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #207ca8;
+}
