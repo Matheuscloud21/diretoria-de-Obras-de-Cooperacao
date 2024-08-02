@@ -1,38 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/index.js"></script>
   </head>
 
   <body>
     <header>
-      <nav id="bavbar">
+      <nav id="navbar">
         <div id="nav-top">
           <div class="logo-pesquisa">
-            <img src="imagens/Distintivo_DOC.png" alt="" width="50px" />
-            <a class="nav-brand" href="#">Ministério da Defesa</a>
+            <a href="#">
+              <img src="imagens/Distintivo_DOC.png" alt="" width="50px" />
+            </a>
+            <div class="vertical-line"></div>
+            <a
+              class="nav-brand"
+              href="https://www.gov.br/defesa/pt-br"
+              target="_blank"
+              >Ministério da Defesa</a
+            >
           </div>
           <div id="barra-navegacao">
             <ul class="nav-list">
               <li class="nav-item">
-                <a href="#">Órgãos do Governo</a>
+                <a
+                  href="https://www.gov.br/pt-br/orgaos-do-governo"
+                  target="_blank"
+                  >Órgãos do Governo</a
+                >
               </li>
 
               <li class="nav-item">
-                <a href="#">Acesso á Informações</a>
+                <a
+                  href="https://www.gov.br/acessoainformacao/pt-br"
+                  target="_blank"
+                  >Acesso á Informações</a
+                >
               </li>
 
               <li class="nav-item">
-                <a href="#">Legislação</a>
+                <a
+                  href="https://www4.planalto.gov.br/legislacao"
+                  target="_blank"
+                  >Legislação</a
+                >
               </li>
 
               <li class="nav-item">
-                <a href="#">Acessibilidade</a>
+                <a
+                  href="https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital"
+                  target="_blank"
+                  >Acessibilidade</a
+                >
               </li>
+              <div class="vertical-line-dois"></div>
             </ul>
           </div>
         </div>
@@ -43,10 +69,37 @@
             <h4>Exército Brasileiro</h4>
           </div>
           <div class="search-box">
-            <input type="text" placeholder="Pesquisar..." />
+            <input class="search-text" type="text" placeholder="Pesquisar..." />
+            <a class="search-btn" href="#">
+              <img src="imagens/Lupa.svg" alt="Lupa" />
+            </a>
           </div>
         </div>
       </nav>
     </header>
+
+    <main>
+      <div class="new-container">
+        <div class="big-left" id="big-left">
+          <div id="quadrado-um"></div>
+        </div>
+
+        <div class="big-right">
+          <div class="cima">
+            <div class="quadrado" id="quadrado-dois"></div>
+            <div class="quadrado" id="quadrado-tres"></div>
+          </div>
+          <div class="baixo">
+            <div class="quadrado" id="quadrado-quatro"></div>
+            <div class="quadrado" id="quadrado-cinco"></div>
+            <div class="quadrado" id="quadrado-seis"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="central-conteudo">
+        <h1>Central de Conteúdos</h1>
+      </div>
+    </main>
   </body>
 </html>
