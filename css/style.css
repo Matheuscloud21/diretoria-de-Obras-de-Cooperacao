@@ -410,7 +410,7 @@ main {
 
 /* MAPA */
 
-.mapa {
+ .mapa {
   margin: 0 auto;
   width: 50%;
   height: 675px;
@@ -418,7 +418,7 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
+} 
 
 /* RODAPE */
 
