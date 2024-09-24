@@ -9,6 +9,15 @@ html{
   scroll-behavior: smooth;
 }
 
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 header #navbar {
   flex-direction: column;
 
@@ -162,12 +171,15 @@ header #nav-top .logo-pesquisa {
 
 main {
   width: 100%;
-  margin: 1000px;
+  flex: 1;
 }
 
 
 /* RODAPE */
 
+footer{
+  margin-top: auto;
+}
 
 .rodape-classe-2{
   width: 100%;

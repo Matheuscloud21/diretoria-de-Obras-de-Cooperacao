@@ -5,8 +5,14 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-html{
+html, body{
+  height: 100%;
   scroll-behavior: smooth;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
 }
 
 header #navbar {
@@ -161,13 +167,42 @@ header #nav-top .logo-pesquisa {
 /* NOTICIAS DA PAGINA */
 
 main {
-  width: 100%;
-  margin: 1000px;
+  flex: 1;
+  width: 70%;
+  margin: 0 auto;
+}
+
+
+.container-geral h2{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background-color: #cccccc;
+  border-top:3px solid #16678E;
+  padding-left: 23px;
+  font-weight: normal;
+
+}
+
+.container-geral p{
+  padding-top: 10px;
+  text-indent: 23px;
+  font-size: 14px;
+}
+
+.lista {
+  list-style-type: disc;
+  padding-left: 40px;
+  padding-bottom: 30px;
+  font-size: 14px;
 }
 
 
 /* RODAPE */
 
+footer{
+  margin-top: auto;
+}
 
 .rodape-classe-2{
   width: 100%;

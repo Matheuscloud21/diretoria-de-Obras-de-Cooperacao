@@ -9,6 +9,16 @@ html{
   scroll-behavior: smooth;
 }
 
+html, body{
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+}
+
 header #navbar {
   flex-direction: column;
 
@@ -167,6 +177,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  flex: 1;
 }
 
 main img{
@@ -206,7 +217,7 @@ main img{
 
 .balao {
   position: relative; 
-  top: 30%;
+  top: 0%;
   left: 100px;
   background-color: #fff;
   border: 1px solid #ccc; 
@@ -323,6 +334,9 @@ main img{
 
 /* RODAPE */
 
+footer{
+  margin-top: auto;
+}
 
 .rodape-classe-2{
   width: 100%;

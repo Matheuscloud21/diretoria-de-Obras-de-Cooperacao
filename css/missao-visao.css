@@ -9,6 +9,14 @@ html{
   scroll-behavior: smooth;
 }
 
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
 header #navbar {
   flex-direction: column;
 
@@ -161,13 +169,44 @@ header #nav-top .logo-pesquisa {
 /* NOTICIAS DA PAGINA */
 
 main {
+  flex: 1;
   width: 100%;
-  margin: 1000px;
+  height: 401px;
+  margin: 0 auto;
+}
+
+.container-geral{
+  width: 70%;
+  margin: 0 auto;
+
+}
+
+.container-geral h2{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background-color: #cccccc;
+  border-top:3px solid #16678E;
+  padding-left: 23px;
+  font-weight: normal;
+
+}
+
+.container-geral p{
+  padding-top: 10px;
+  text-indent: 23px;
+}
+
+#espacamento{
+  padding-top: 0px;
 }
 
 
 /* RODAPE */
 
+footer {
+  margin-top: auto;
+}
 
 .rodape-classe-2{
   width: 100%;
