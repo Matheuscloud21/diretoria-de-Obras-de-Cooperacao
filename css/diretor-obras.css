@@ -172,8 +172,40 @@ header #nav-top .logo-pesquisa {
 main {
   width: 100%;
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+} 
+
+main iframe{
+  width: 50%;
+  height: 600px;
+  padding: 16px 0;
+  border: none;
+ 
 }
 
+.container-geral{
+  width: 65%;
+  margin: 0 auto;
+}
+
+.container-geral h2{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background-color: #cccccc;
+  border-top:3px solid #16678E;
+  padding-left: 23px;
+  font-weight: normal;
+  font-size: 22px;
+}
+
+.container-geral p{
+  padding-top: 10px;
+  text-indent: 23px;
+}
 
 /* RODAPE */
 
