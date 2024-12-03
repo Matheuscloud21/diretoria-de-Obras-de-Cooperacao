@@ -170,10 +170,55 @@ header #nav-top .logo-pesquisa {
 /* NOTICIAS DA PAGINA */
 
 main {
-  width: 100%;
+  margin: 0 auto;
+  width: 80%;
   flex: 1;
 }
 
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.image-container {
+  width: calc(16% - 20px); /* 4 imagens por linha */
+  margin-bottom: 10px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+.container-geral{
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  
+}
+
+.container-geral h2{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background-color: #cccccc;
+  border-top:3px solid #16678E;
+  padding-left: 23px;
+  font-weight: normal;
+  font-size: 22px;
+}
+
+.container-geral p{
+  padding-top: 10px;
+  text-indent: 23px;
+}
 
 /* RODAPE */
 
