@@ -4,10 +4,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval';">
+
     <title>DOC - Diretoria de Obras de Cooperação</title>
 
     <link rel="stylesheet" href="../css/engenharia-desenvolvimento-nascional.css" />
     <link rel="icon" href="../imagens/Distintivo_DOC.ico" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> <!-- GSAP -->
     
   </head>
   <body>
@@ -81,6 +85,41 @@
 
     <main>
       
+
+      <div class="pdf-library-container">
+        <h1>Biblioteca de Livros</h1>
+        
+        <!-- Lista de Livros -->
+        <div class="book-list">
+          <button data-url="../arquivos/livros/tomo1.pdf">📘 Livro 1</button>
+          <button data-url="./arquivos/livros/tomo1.pdf">📗 Livro 2</button>
+          <button data-url="./arquivos/livros/tomo1.pdf">📕 Livro 3</button>
+        </div>
+    
+        <!-- Visualizador de PDF -->
+        <div class="pdf-viewer-container">
+          <div id="controls" class="controls">
+            <button id="prev-page">← Anterior</button>
+            <span id="page-num">1</span> / <span id="page-count"></span>
+            <button id="next-page">Próxima →</button>
+          </div>
+    
+          <div class="canvas-container">
+            <canvas id="pdf-render"></canvas>
+          </div>
+    
+          <div class="zoom-controls">
+            <button id="zoom-in">🔍 +</button>
+            <button id="zoom-out">🔍 -</button>
+          </div>
+        </div>
+      </div>
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+      <script src="script.js"></script>
+
+
+
     </main>
 
     <footer>

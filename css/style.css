@@ -241,7 +241,7 @@ main {
   padding: 14px;
   width: 100%;
   height: 100%;
-  background-image: url("../imgnews/noticia01.jpg");
+  background-image: url("../imgnews/GO213/CAPA\ GO\ 213.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -254,7 +254,7 @@ main {
 
 #quadrado-dois {
   padding: 14px;
-  background-image: url("../imgnews/noticia02.jpg");
+  background-image: url("../imgnews/1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -270,7 +270,7 @@ main {
 
 #quadrado-quatro {
   padding: 14px;
-  background-image: url("../imgnews/noticia04.jpg");
+  background-image: url("../imgnews/1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

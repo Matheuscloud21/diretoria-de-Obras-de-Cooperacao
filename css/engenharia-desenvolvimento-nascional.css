@@ -170,10 +170,67 @@ header #nav-top .logo-pesquisa {
 /* NOTICIAS DA PAGINA */
 
 main {
-  width: 100%;
-  flex: 1;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
 }
 
+.pdf-library-container {
+  width: 100%;
+  max-width: 900px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  text-align: center;
+}
+
+.book-list {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.book-list button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.book-list button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+.pdf-viewer-container {
+  display: none; /* Oculto até que um livro seja selecionado */
+  text-align: center;
+}
+
+.canvas-container {
+  border: 1px solid #ccc;
+  margin-top: 15px;
+}
+
+button {
+  margin: 5px;
+}
+
+.zoom-controls {
+  margin-top: 10px;
+}
 
 /* RODAPE */
 
