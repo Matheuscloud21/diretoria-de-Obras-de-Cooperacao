@@ -174,7 +174,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: auto;
   margin: 0;
   background-color: #f4f4f4;
 }
@@ -230,6 +230,38 @@ button {
 
 .zoom-controls {
   margin-top: 10px;
+}
+
+#prev-page{
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#prev-page:hover{
+  background-color: #2e2e2e;
+  transform: scale(1.1);
+}
+
+#next-page{
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#next-page:hover{
+  background-color: #2e2e2e;
+  transform: scale(1.1);
 }
 
 /* RODAPE */
@@ -303,3 +335,4 @@ footer{
 
   gap: 10px;
 }
+
