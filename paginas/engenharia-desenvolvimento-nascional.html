@@ -91,15 +91,16 @@
         </div>
     
         <!-- Visualizador de PDF -->
-        <div class="pdf-viewer-container">
+        <div class="pdf-viewer-container" style=" display: none;">
           <div id="controls" class="controls">
             <button id="prev-page">← Anterior</button>
             <span id="page-num">1</span> / <span id="page-count"></span>
             <button id="next-page">Próxima →</button>
+            <button id="close-pdf" class="close-btn">X</button>
           </div>
   
           <div class="canvas-container">
-            <canvas id="pdf-render"></canvas>
+            <canvas id="pdf-render" ></canvas>
           </div>
   
           <div class="zoom-controls">

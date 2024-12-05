@@ -106,3 +106,8 @@ document.querySelectorAll(".book-list button").forEach((button) => {
     loadPDF(url);
   });
 });
+
+// Fechar o visualizador de PDF ao clicar no "X"
+document.getElementById("close-pdf").addEventListener("click", () => {
+  document.querySelector(".pdf-viewer-container").style.display = "none"; // Esconde o visualizador
+});
