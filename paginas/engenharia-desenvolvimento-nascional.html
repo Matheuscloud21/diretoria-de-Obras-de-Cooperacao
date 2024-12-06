@@ -81,35 +81,56 @@
     <main>
       
 
-      <div class="pdf-library-container">
-        <h1>Livro - A Engenharia do Exército na Construção do Desenvolvimento Nacional</h1>
-        
-        <!-- Lista de Livros -->
-        <div class="book-list">
-          <button data-url="../arquivos/livros/tomo1.pdf">📘 TOMO 1</button>
-          <button data-url="../arquivos/livros/tomo2.pdf">📗 TOMO 2</button>
-        </div>
-    
-        <!-- Visualizador de PDF -->
-        <div class="pdf-viewer-container" style=" display: none;">
-          <div id="controls" class="controls">
-            <button id="prev-page">← Anterior</button>
-            <span id="page-num">1</span> / <span id="page-count"></span>
-            <button id="next-page">Próxima →</button>
-            <button id="close-pdf" class="close-btn">X</button>
-          </div>
-  
-          <div class="canvas-container">
-            <canvas id="pdf-render" ></canvas>
-          </div>
-  
-          <div class="zoom-controls">
-            <button id="zoom-in">🔍 +</button>
-            <button id="zoom-out">🔍 -</button>
-          </div>
-        </div>
-      </div>
+      <div class="centralizar">
 
+        <div id="pdf-library-container-1" class="pdf-library-container">
+          <h1>Livro - A Engenharia do Exército na Construção do Desenvolvimento Nacional</h1>
+          <div class="book-list">
+            <button data-url="../arquivos/livros/tomo1.pdf">📘 TOMO 1</button>
+            <button data-url="../arquivos/livros/tomo2.pdf">📗 TOMO 2</button>
+          </div>
+          <div class="pdf-viewer-container" style="display: none;">
+            <div class="controls">
+              <button class="prev-page">← Anterior</button>
+              <span class="page-num">1</span> / <span class="page-count"></span>
+              <button class="next-page">Próxima →</button>
+              <button class="close-btn">X</button>
+            </div>
+            <div class="canvas-container">
+              <canvas class="pdf-render"></canvas>
+            </div>
+            <div class="zoom-controls">
+              <button class="zoom-in">🔍 +</button>
+              <button class="zoom-out">🔍 -</button>
+            </div>
+          </div>
+        </div>
+        
+        <div id="pdf-library-container-2" class="pdf-library-container">
+          <h1>Livro - Outro Tomo</h1>
+          <div class="book-list">
+            <button>
+              <a href="https://www.amazon.com.br/Historia-Oral-Exercito-Engenharia-Militar/dp/8570114273" target="_blank" class="external-link">📘 TOMO 1</a>
+            </button>
+            <button data-url="../arquivos/livros/tomo3.pdf">📗 TOMO 2</button>
+          </div>
+          <div class="pdf-viewer-container" style="display: none;">
+            <div class="controls">
+              <button class="prev-page">← Anterior</button>
+              <span class="page-num">1</span> / <span class="page-count"></span>
+              <button class="next-page">Próxima →</button>
+              <button class="close-btn">X</button>
+            </div>
+            <div class="canvas-container">
+              <canvas class="pdf-render"></canvas>
+            </div>
+            <div class="zoom-controls">
+              <button class="zoom-in">🔍 +</button>
+              <button class="zoom-out">🔍 -</button>
+            </div>
+          </div>
+        </div>
+        
       </div>
       
       <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>

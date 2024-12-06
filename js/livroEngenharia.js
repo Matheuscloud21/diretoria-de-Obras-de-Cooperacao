@@ -1,113 +1,87 @@
-// Variáveis principais
-let pdfDoc = null,
-  pageNum = 1,
-  scale = 1.5, // Escala inicial
-  canvas = document.getElementById("pdf-render"),
-  ctx = canvas.getContext("2d");
+function setupPDFViewer(containerId) {
+  const container = document.getElementById(containerId);
+  const buttons = container.querySelectorAll(".book-list button");
+  const pdfViewerContainer = container.querySelector(".pdf-viewer-container");
+  const canvas = container.querySelector(".pdf-render");
+  const ctx = canvas.getContext("2d");
+  let pdfDoc = null, pageNum = 1, scale = 1.5;
 
-// Armazenar as páginas renderizadas em cache para evitar renderizações repetidas
-const pageCache = {};
+  function renderPage(num) {
+    pdfDoc.getPage(num).then((page) => {
+      const viewport = page.getViewport({ scale });
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
 
-function loadPDF(url) {
-  pdfjsLib
-    .getDocument({
-      url: url,
-      cMapUrl: 'https://cdn.jsdelivr.net/npm/pdfjs-dist/cmaps/',
-      cMapPacked: true,
-      workerSrc: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js',
-    })
-    .promise.then((pdfDoc_) => {
-      pdfDoc = pdfDoc_;
-      document.getElementById("page-count").textContent = pdfDoc.numPages;
-      pageNum = 1;
-      renderPage(pageNum); // Renderiza a primeira página
-      document.querySelector(".pdf-viewer-container").style.display = "block"; // Exibe o visualizador
-    })
-    .catch((error) => {
-      console.error("Erro ao carregar o PDF:", error);
-      alert("Não foi possível carregar o arquivo PDF.");
+      const renderContext = {
+        canvasContext: ctx,
+        viewport: viewport,
+      };
+
+      page.render(renderContext).promise.then(() => {
+        container.querySelector(".page-num").textContent = num;
+      });
     });
-}
-
-// Função para renderizar a página com cache
-function renderPage(num) {
-  // Verifica se a página já está no cache
-  if (pageCache[num]) {
-    canvas.width = pageCache[num].width;
-    canvas.height = pageCache[num].height;
-    ctx.putImageData(pageCache[num].imageData, 0, 0);
-    document.getElementById("page-num").textContent = num;
-    return;
   }
 
-  pdfDoc.getPage(num).then((page) => {
-    const viewport = page.getViewport({ scale });
-    canvas.width = viewport.width;
-    canvas.height = viewport.height;
+  function loadPDF(url) {
+    pdfjsLib
+      .getDocument(url)
+      .promise.then((pdf) => {
+        pdfDoc = pdf;
+        container.querySelector(".page-count").textContent = pdfDoc.numPages;
+        pageNum = 1;
+        renderPage(pageNum);
+        pdfViewerContainer.style.display = "block";
+      })
+      .catch((error) => {
+        console.error("Erro ao carregar o PDF:", error);
+      });
+  }
 
-    const renderContext = {
-      canvasContext: ctx,
-      viewport: viewport,
-    };
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const url = button.getAttribute("data-url");
 
-    page.render(renderContext).promise.then(() => {
-      // Armazena a imagem da página no cache
-      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-      pageCache[num] = { imageData, width: canvas.width, height: canvas.height };
-      document.getElementById("page-num").textContent = num;
+      // Fechar qualquer outro visualizador de PDF aberto
+      const otherContainers = document.querySelectorAll(".pdf-library-container");
+      otherContainers.forEach((otherContainer) => {
+        const otherPdfViewer = otherContainer.querySelector(".pdf-viewer-container");
+        if (otherPdfViewer !== pdfViewerContainer) {
+          otherPdfViewer.style.display = "none"; // Fecha o visualizador da outra div
+        }
+      });
+
+      loadPDF(url);
     });
+  });
+
+  container.querySelector(".prev-page").addEventListener("click", () => {
+    if (pageNum > 1) renderPage(--pageNum);
+  });
+
+  container.querySelector(".next-page").addEventListener("click", () => {
+    if (pageNum < pdfDoc.numPages) renderPage(++pageNum);
+  });
+
+  container.querySelector(".zoom-in").addEventListener("click", () => {
+    if (scale < 3) {
+      scale += 0.2;
+      renderPage(pageNum);
+    }
+  });
+
+  container.querySelector(".zoom-out").addEventListener("click", () => {
+    if (scale > 0.5) {
+      scale -= 0.2;
+      renderPage(pageNum);
+    }
+  });
+
+  container.querySelector(".close-btn").addEventListener("click", () => {
+    pdfViewerContainer.style.display = "none";
   });
 }
 
-// Função para navegar entre as páginas com lazy loading
-function goToPage(num) {
-  if (num < 1 || num > pdfDoc.numPages) return;
-  
-  // Renderiza a página atual
-  renderPage(num);
-
-  // Carregar a próxima e a anterior página se necessário
-  if (num > 1 && !pageCache[num - 1]) {
-    renderPage(num - 1); // Carregar a página anterior
-  }
-  if (num < pdfDoc.numPages && !pageCache[num + 1]) {
-    renderPage(num + 1); // Carregar a próxima página
-  }
-  
-  pageNum = num;
-}
-
-// Navegar entre páginas
-document.getElementById("prev-page").addEventListener("click", () => {
-  if (pageNum > 1) goToPage(pageNum - 1);
-});
-
-document.getElementById("next-page").addEventListener("click", () => {
-  if (pageNum < pdfDoc.numPages) goToPage(pageNum + 1);
-});
-
-// Controle de Zoom
-document.getElementById("zoom-in").addEventListener("click", () => {
-  if (scale >= 3) return; // Limita o zoom máximo
-  scale += 0.2;
-  renderPage(pageNum);
-});
-
-document.getElementById("zoom-out").addEventListener("click", () => {
-  if (scale <= 0.5) return; // Limita o zoom mínimo
-  scale -= 0.2;
-  renderPage(pageNum);
-});
-
-// Carregar PDF ao clicar em um botão
-document.querySelectorAll(".book-list button").forEach((button) => {
-  button.addEventListener("click", (e) => {
-    const url = e.target.getAttribute("data-url");
-    loadPDF(url);
-  });
-});
-
-// Fechar o visualizador de PDF ao clicar no "X"
-document.getElementById("close-pdf").addEventListener("click", () => {
-  document.querySelector(".pdf-viewer-container").style.display = "none"; // Esconde o visualizador
-});
+// Inicialize cada visualizador de PDF
+setupPDFViewer("pdf-library-container-1");
+setupPDFViewer("pdf-library-container-2");

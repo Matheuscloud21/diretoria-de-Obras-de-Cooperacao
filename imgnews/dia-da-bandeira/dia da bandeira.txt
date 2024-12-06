@@ -1,0 +1,9 @@
+titulo: Dia da Bandeira 
+
+
+texto:
+Hoje celebramos o Dia da Bandeira, um símbolo sagrado da nossa Pátria, que representa a união, a força e a dedicação de todos os brasileiros. Para o Exército Brasileiro, a Bandeira Nacional é mais do que um emblema; é a expressão da nossa história, da nossa luta e dos valores que nos unem como nação.
+
+Neste dia, renovamos nosso compromisso de servir à Pátria com honra, disciplina e coragem, sempre prontos para proteger e defender os ideais de liberdade, justiça e paz. A Bandeira, que nos guia, nos inspira a seguir em frente com a certeza de que, por meio da união e do trabalho conjunto, podemos alcançar um futuro cada vez mais próspero e justo.
+
+Parabéns a todos os soldados e civis que, com respeito e devoção, mantêm vivo o espírito de nossa Bandeira, símbolo maior da nossa identidade e do nosso amor à Pátria.

@@ -176,16 +176,38 @@ main {
   align-items: center;
   height: auto;
   margin: 0;
-  background-color: #f4f4f4;
+
 }
+
+.centralizar{
+  margin: 50px;
+
+}
+
+.external-link {
+  text-decoration: none;
+  color: white; /* Ou qualquer cor desejada */
+}
+button {
+  display: inline-block;
+  padding: 5px 10px;
+}
+button a {
+  display: block;
+}
+
 
 .pdf-library-container {
   width: 100%;
   max-width: 900px;
   background-color: white;
-  padding: 20px;
+  padding: 10px;
   border-radius: 15px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+#pdf-library-container-2{
+  margin-top: 50px;
 }
 
 h1 {
