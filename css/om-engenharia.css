@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -171,7 +172,11 @@ header #nav-top .logo-pesquisa {
 
 main {
   width: 100%;
-  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
 .container-geral{
@@ -190,11 +195,6 @@ main {
   font-size: 22px;
 }
 
-.container-geral p{
-  padding-top: 10px;
-  text-indent: 23px;
-}
-
 
 .grid-container {
   display: grid;
@@ -204,10 +204,7 @@ main {
 }
 
 .grid-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  
   border: 1px solid #ddd;
   padding: 10px;
   text-align: center;
@@ -217,34 +214,60 @@ main {
   cursor: pointer;
 }
 
-.grid-container a{
+.vertical-layout {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+}
+
+.vertical-column {
+  width: 174px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  height: auto;
+  align-self: flex-start;
+}
+
+.vertical-column a{
   text-decoration: none;
-  color: inherit;
+}
+
+.vertical-column h3 {
+  margin-bottom: 10px;
+  text-align: center;
+  color: #333;
+  
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  transition: transform 0.3s;
+  cursor: pointer;
+
+  text-decoration: none;
+}
+
+.grid-item:hover {
+  transform: scale(1.05);
 }
 
 .grid-item img {
-  width: 80px;
-  height: 100px;
-  max-width: 100px;
-  max-height: 100px;
+  width: 60px;
+  height: auto;
+  margin-bottom: 5px;
 }
 
 .grid-item p {
-  margin-top: 10px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  font-size: 14px;
+  color: #555;  
 }
 
 
