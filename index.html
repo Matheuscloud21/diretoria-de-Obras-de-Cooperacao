@@ -10,6 +10,8 @@
     <link rel="icon" href="imagens/Distintivo_DOC.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     
+    <!-- CRIEI ESSE CODIGO USANDO MEU AMIGO CHAT GPT, NÂO ME JULGUE PRINCIPALMENTE O JAVASCRIPT  -->
+    <!-- BOA SORTE -->
     
   </head>
   <body>
@@ -237,7 +239,9 @@
             const obras = [
               { nome: "Obra 1", descricao: "Descrição detalhada da Obra 1.", lat: -23.55052, lng: -46.633308 },
               { nome: "Obra 2", descricao: "Descrição detalhada da Obra 2.", lat: -22.906847, lng: -43.172896 },
-              { nome: "Obra 3", descricao: "Descrição detalhada da Obra 3.", lat: -15.7801, lng: -47.9292 }
+              { nome: "Obra 3", descricao: "Descrição detalhada da Obra 3.", lat: -15.7801, lng: -47.9292 },
+              { nome: "Obra 3", descricao: "Descrição detalhada da Obra 3.", lat: -18.7801, lng: -47.9292 }
+
             ];
 
             // Ícone personalizado para os marcadores
@@ -245,7 +249,7 @@
               iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png', // Substitua pela URL do seu ícone
               iconSize: [20, 20], // Tamanho do ícone
               iconAnchor: [15, 40], // Ponto de ancoragem
-              popupAnchor: [0, -35] // Localização do popup em relação ao ícone
+              popupAnchor: [-5, -35] // Localização do popup em relação ao ícone
             });
 
             // Adicionar marcadores ao mapa
