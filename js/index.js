@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function() {
   const quadrados = document.querySelectorAll(".quadrado");
 
@@ -15,3 +16,4 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+
