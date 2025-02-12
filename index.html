@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="imagens/Distintivo_DOC.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/mapa.css" />
     
     <!-- CRIEI ESSE CODIGO USANDO MEU AMIGO CHAT GPT, NÂO ME JULGUE PRINCIPALMENTE O JAVASCRIPT  -->
     <!-- BOA SORTE -->
@@ -220,47 +221,7 @@
       <div class="mapa">
           <div id="map"></div>
           <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-          <script>
-            // Inicializar o mapa centrado no Brasil
-            const map = L.map('map').setView([-14.235004, -51.92528], 4);
-
-            // Adicionar a camada Stadia Alidade Satellite
-            const Stadia_AlidadeSatellite = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.{ext}', {
-              minZoom: 0,
-              maxZoom: 20,
-              attribution: '&copy; CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | &copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-              ext: 'jpg'
-            });
-
-            // Adicionar a camada ao mapa
-            Stadia_AlidadeSatellite.addTo(map);
-
-            // Dados das obras (nome, descrição e coordenadas)
-            const obras = [
-              { nome: "2º BATALHÃO FERROVIÁRIO (2º B Fv)", descricao: "DUPLICAÇÃO E RESTAURAÇÃO DA GO 213", lat: -17.69643, lng: -48.51433 },
-              // { nome: "Obra 2", descricao: "Descrição detalhada da Obra 2.", lat: -22.906847, lng: -43.172896 },
-              // { nome: "Obra 3", descricao: "Descrição detalhada da Obra 3.", lat: -15.7801, lng: -47.9292 },
-              // { nome: "Obra 3", descricao: "Descrição detalhada da Obra 3.", lat: -18.7801, lng: -47.9292 }
-
-            ];
-
-            // Ícone personalizado para os marcadores
-            const customIcon = L.icon({
-              iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png', // Substitua pela URL do seu ícone
-              iconSize: [20, 20], // Tamanho do ícone
-              iconAnchor: [15, 40], // Ponto de ancoragem
-              popupAnchor: [-5, -35] // Localização do popup em relação ao ícone
-            });
-
-            // Adicionar marcadores ao mapa
-            obras.forEach(obra => {
-              const marker = L.marker([obra.lat, obra.lng], { icon: customIcon }).addTo(map);
-              marker.bindPopup(`
-                <b>${obra.nome}</b><br>
-                ${obra.descricao}
-              `);
-            });
-        </script>
+          <script src="js/jsmapa.js"></script>
       </div>
 
       <div class="rodape">
