@@ -10,11 +10,35 @@ const grupamentos = {
 // Inicializar o mapa centralizado no Brasil
 const map = L.map('map').setView([-14.235004, -51.92528], 4);
 
-// Adicionar a camada do mapa
-L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.jpg', {
-  maxZoom: 20,
-  attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a>'
-}).addTo(map);
+// Definir as diferentes camadas de mapa
+const mapas = {
+  "OpenStreetMap": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }),
+  "Humanitarian": L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">HOT</a>'
+  }),
+  "Topográfico": L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+    maxZoom: 17,
+    attribution: '© OpenStreetMap contributors, © SRTM | Style: © OpenTopoMap (CC-BY-SA)'
+  }),
+  "Terreno": L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 13,
+    attribution: '© Esri, USGS, NOAA'
+  }),
+  "Terreno USGS": L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 20,
+    attribution: 'USGS, National Geospatial Program'
+  })
+};
+
+// Adicionar a camada padrão ao mapa
+mapas["Terreno USGS"].addTo(map);
+
+// Adicionar o controle de camadas
+L.control.layers(mapas).addTo(map);
 
 // Dados das obras
 const obras = [
