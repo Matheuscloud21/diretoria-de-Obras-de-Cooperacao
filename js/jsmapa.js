@@ -24,18 +24,14 @@ const mapas = {
     maxZoom: 17,
     attribution: '© OpenStreetMap contributors, © SRTM | Style: © OpenTopoMap (CC-BY-SA)'
   }),
-  "Terreno": L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', {
-    maxZoom: 13,
-    attribution: '© Esri, USGS, NOAA'
-  }),
-  "Terreno USGS": L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}', {
-    maxZoom: 20,
-    attribution: 'USGS, National Geospatial Program'
+  "Satélite (Esri)": L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 19,
+    attribution: 'Esri, NASA, NOAA'
   })
 };
 
 // Adicionar a camada padrão ao mapa
-mapas["Terreno USGS"].addTo(map);
+mapas["Satélite (Esri)"].addTo(map);
 
 // Adicionar o controle de camadas
 L.control.layers(mapas).addTo(map);
