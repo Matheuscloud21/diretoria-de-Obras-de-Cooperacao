@@ -1,0 +1,35 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # A branch de onde o site será publicado
+  workflow_dispatch:  # Permite rodar manualmente
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Passo 1: Pega o código do repositório
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      # Passo 2: Configura o GitHub Pages
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # Passo 3: Faz upload dos arquivos estáticos
+      - name: Upload de arquivos para GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .  # Altere o caminho caso seu site esteja em uma pasta específica
+
+      # Passo 4: Publica o site no GitHub Pages
+      - name: Publicar no GitHub Pages
+        uses: actions/deploy-pages@v4
