@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const path = require('path');
 require('dotenv').config();
 
 const connectDB = require('./src/config/db');
@@ -16,7 +17,12 @@ connectDB();
 
 // Middlewares de segurança
 app.use(cors());
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: false, // Desabilita CSP para permitir carregar recursos locais
+    crossOriginEmbedderPolicy: false // Permite carregar recursos de diferentes origens
+  })
+);
 
 // Rate limiting
 const limiter = rateLimit({
@@ -29,13 +35,16 @@ app.use(limiter);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Rotas
+// Servir arquivos estáticos
+app.use(express.static(path.join(__dirname, '..'))); // Um nível acima para acessar a raiz do projeto
+
+// Rotas da API
 app.use('/api/auth', authRoutes);
 app.use('/api/works', workRoutes);
 
-// Rota básica
+// Rota básica - envia o index.html
 app.get('/', (req, res) => {
-  res.json({ message: 'API do DOC Admin está funcionando!' });
+  res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 // Tratamento de erros
