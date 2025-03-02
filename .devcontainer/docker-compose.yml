@@ -19,7 +19,7 @@ services:
       - ADMINJS_ROOT_PATH=/admin
       - FRONTEND_DIR=/workspace
     ports:
-      - "3001:3000"
+      - "3000:3000"
       - "9229:9229"
     depends_on:
       db:

@@ -4,25 +4,46 @@
   "service": "app",
   "workspaceFolder": "/workspace",
   "customizations": {
-   "vscode": {
-    "extensions": [
-     "dbaeumer.vscode-eslint",
-     "esbenp.prettier-vscode",
-     "mongodb.mongodb-vscode",
-     "christian-kohler.npm-intellisense",
-     "mikestead.dotenv",
-     "ms-azuretools.vscode-docker"
-    ],
-    "settings": {
-     "editor.formatOnSave": true,
-     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
-     }
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "mongodb.mongodb-vscode",
+        "christian-kohler.npm-intellisense",
+        "mikestead.dotenv",
+        "ms-azuretools.vscode-docker",
+        "RooVeterinaryInc.roo-cline",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "GitHub.vscode-pull-request-github"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": true
+        }
+      }
     }
-   }
   },
   "postCreateCommand": "/bin/sh -c 'cd /workspace/backend && npm install --legacy-peer-deps && node scripts/bundle-adminjs.js'",
-  // "postStartCommand": "cd /workspace/backend && npm run dev",
-  "forwardPorts": [3001, 27018, 9229],
-  "remoteUser": "node"
- }
+  "forwardPorts": [3000, 27018, 9229], // ⚠️ Alterado para 3001
+  "portsAttributes": {
+    "3000": { // ⚠️ Corrigido para 3001
+      "label": "AdminJS & Frontend",
+      "onAutoForward": "notify",
+      "protocol": "http",
+      "requireLocalPort": true
+    },
+    "27018": {
+      "label": "MongoDB",
+      "onAutoForward": "notify"
+    },
+    "9229": {
+      "label": "Debug Node.js",
+      "onAutoForward": "notify"
+    }
+  },
+  "forwardPortsNotification": "always",
+  "remoteUser": "node",
+  "postStartCommand": "echo '\n🚀 Ambiente Inicializado com Sucesso!\n\n📍 Serviços Disponíveis:\n- Frontend: http://localhost:3000\n- AdminJS: http://localhost:3000/admin\n  - Login: admin@admin.com\n  - Senha: admin\n- MongoDB: mongodb://root:root@localhost:27018\n\n💡 Debug: Node.js debugger disponível na porta 9229\n'"
+}

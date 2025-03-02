@@ -1,177 +1,101 @@
 # Plano de Configuração do Dev Container com AdminJS v7
 
-## 1. Estrutura do Projeto
+Este documento descreve a estrutura de diretórios e componentes essenciais para o projeto.
 
-### 1.1 Organização de Diretórios (Validação Obrigatória)
-```
-├── .devcontainer/          # Configurações do Container
-│   ├── devcontainer.json
-│   ├── docker-compose.yml
-│   └── Dockerfile
-├── index.html             # Página inicial do site
-├── mapstyles.md             # Estilos do mapa
-├── package-lock.json
-├── adminjs-docs/            # Documentação do AdminJS
-│   ├── api-reference.md
-│   ├── basics/
-│   ├── deployment/
-│   ├── faq/
-│   ├── installation/
-│   ├── tutorials/
-│   └── ui-customization/
-├── arquivos/               # Arquivos e documentos
+## 1. Organização do Projeto
+
+### 1.1 Estrutura de Diretórios
+```plaintext
+.
+├── .devcontainer/          # Configurações do ambiente de desenvolvimento
+│   ├── devcontainer.json   # Configurações VS Code e extensões
+│   ├── docker-compose.yml  # Configuração dos serviços (app e db)
+│   └── Dockerfile         # Configuração da imagem do container
+│
+├── backend/               # Sistema Administrativo (AdminJS)
+│   ├── src/              # Código fonte do backend
+│   │   ├── admin/        # Configurações do AdminJS
+│   │   ├── config/       # Configurações gerais
+│   │   ├── models/       # Modelos do MongoDB
+│   │   └── routes/       # Rotas da API
+│   ├── scripts/          # Scripts de utilidade
+│   │   └── bundle-adminjs.js  # Gerador do bundle AdminJS
+│   ├── public/           # Arquivos estáticos
+│   │   └── admin/        # Assets do AdminJS
+│   ├── uploads/          # Upload de arquivos
+│   └── package.json      # Dependências do Node.js
+│
+├── frontend/             # Site Estático
+│   ├── css/             # Estilos do site
+│   │   ├── contato.css
+│   │   ├── diretor-obras.css
+│   │   ├── galeria-*.css
+│   │   ├── historico.css
+│   │   ├── mapa.css
+│   │   ├── missao-visao.css
+│   │   ├── om-engenharia.css
+│   │   └── style.css
+│   │
+│   ├── js/              # Scripts do site
+│   │   ├── galeriaHistorica.js
+│   │   ├── index.js
+│   │   ├── jsmapa.js
+│   │   ├── livroEngenharia.js
+│   │   └── paginasnew.js
+│   │
+│   ├── imagens/         # Imagens estáticas
+│   │   ├── galeria/
+│   │   ├── logos-om/
+│   │   └── GALERIA_DOS_ANTIGOS_DIRETORES_DOC_2/
+│   │
+│   ├── imgnews/         # Imagens de notícias
+│   │   ├── BR-135/
+│   │   ├── BR-222/
+│   │   ├── BR-367/
+│   │   └── [outras pastas de notícias]
+│   │
+│   ├── paginas/         # Páginas HTML
+│   │   ├── contato.html
+│   │   ├── diretor-obras.html
+│   │   ├── galeria-*.html
+│   │   ├── historico.html
+│   │   ├── missao-visao.html
+│   │   ├── om-engenharia.html
+│   │   └── paginanew.html
+│   │
+│   └── index.html       # Página inicial
+│
+├── arquivos/            # Documentos e PDFs
 │   ├── Gen_Bernardes.pdf
 │   └── livros/
 │       ├── tomo1.pdf
 │       ├── tomo2.pdf
 │       └── tomo3.pdf
-├── css/                   # Estilos do site
-│   ├── contato.css
-│   ├── diretor-obras.css
-│   ├── engenharia-desenvolvimento-nascional.css
-│   ├── galeria-eternos-diretores.css
-│   ├── galeria-historica.css
-│   ├── historico.css
-│   ├── mapa.css
-│   ├── missao-visao.css
-│   ├── om-engenharia.css
-│   ├── paginanew.css
-│   └── style.css
-├── imagens/              # Imagens do site
-│   ├── galeria/
-│   ├── GALERIA_DOS_ANTIGOS_DIRETORES_DOC_2/
-│   ├── logos-om/
-│   └── [arquivos de imagem]
-├── imgnews/             # Imagens de notícias
-│   ├── BR-135/
-│   ├── BR-222/
-│   ├── BR-367/
-│   ├── dia-da-bandeira/
-│   ├── GO213/
-│   ├── pagnews01/
-│   ├── VISITA-DA-COMITIVA/
-│   ├── VISITA-DO-GEN-DAVID/
-│   └── [arquivos de notícias]
-├── js/                  # Scripts do site
-│   ├── galeriaHistorica.js
-│   ├── index.js
-│   ├── jsmapa.js
-│   ├── livroEngenharia.js
-│   └── paginasnew.js
-├── paginas/            # Páginas HTML
-│   ├── contato.html
-│   ├── diretor-obras.html
-│   ├── engenharia-desenvolvimento-nascional.html
-│   ├── galeria-eternos-diretores.html
-│   ├── galeria-historica.html
-│   ├── historico.html
-│   ├── missao-visao.html
-│   ├── om-engenharia.html
-│   ├── paginanew.html
-│   └── paginasnews/
-├── backend/            # Sistema Administrativo (AdminJS)
-    ├── src/
-    │   ├── admin/
-    │   ├── config/
-    │   ├── models/
-    │   └── routes/
-    ├── scripts/
-    │   └── bundle-adminjs.js
-    ├── public/
-    │   └── admin/
-    ├── uploads/
-    └── package.json
-```
+│
+├── adminjs-docs/        # Documentação do AdminJS
+│   ├── basics/          # Guias básicos
+│   ├── deployment/      # Instruções de implantação
+│   ├── faq/            # Perguntas frequentes
+│   ├── installation/    # Guias de instalação
+│   ├── tutorials/       # Tutoriais práticos
+│   └── ui-customization/ # Personalização da interface
+│
+└── package.json        # Dependências globais do projeto
 
+### 1.2 Pontos de Atenção
 
-## 1.2 Arquitetura do Sistema
+1. **Diretórios com Permissões Especiais**:
+   - `/backend/uploads`: chmod 775 (escrita para usuário node)
+   - `/backend/public/admin`: chmod 775 (bundle do AdminJS)
 
-### 1.2.1 Diagrama de Componentes
-```mermaid
-graph TD
-    A[Container App] -->|MongoDB Connection| B[Container DB]
-    A -->|Port Mapping| C[Host :3001]
-    B -->|Port Mapping| D[Host:27018]
-    A -->|Volumes| E[Node Modules]
-    B -->|Volumes| F[MongoDB Data]
-```
+2. **Volumes Docker**:
+   - `adminjs-node-modules`: Cache de node_modules
+   - `mongodb-data`: Dados persistentes do MongoDB
 
-### 1.2.3 Especificações Técnicas
-| Componente         | Versão     | Porta Container | Porta Host |
-|--------------------|------------|-----------------|------------|
-| Node.js            | 18.x       | 3000            | 3001       |
-| MongoDB            | 6.0.11     | 27017           | 27018      |
-| AdminJS            | 7.x        | -               | -          |
-
----
-
-## 2. Configurações do Container
-
-### 2.1 Dockerfile Otimizado
-```dockerfile
-FROM node:18-bullseye
-
-# Instalação de dependências do sistema
-RUN apt-get update && apt-get install -y \
-    gnupg \
-    curl \
-    git \
-    mongodb-database-tools
-
-# Configuração do ambiente
-WORKDIR /workspace/backend
-COPY package*.json ./
-RUN npm install --legacy-peer-deps --production
-
-# Configuração de diretórios
-RUN mkdir -p public/admin uploads scripts && \
-    chown -R node:node . && \
-    chmod -R 775 uploads
-
-USER node
-
-ENV NODE_ENV=development \
-    ADMINJS_WATCH=true \
-    ADMINJS_BUNDLE_PATH=/workspace/backend/public/admin
-```
-
-### 2.2 Docker Compose
-```yaml
-version: '3.8'
-
-services:
-  app:
-    build: .devcontainer
-    volumes:
-      - ..:/workspace:cached
-      - node_modules:/workspace/backend/node_modules
-    environment:
-      MONGODB_URI: mongodb://root:root@db:27017/doc_db?authSource=admin
-    ports:
-      - "3001:3000"
-    depends_on:
-      db:
-        condition: service_healthy
-    command: npm run dev
-
-  db:
-    image: mongo:6.0.11
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root
-    ports:
-      - "27018:27017"
-    volumes:
-      - mongodb_data:/data/db
-    healthcheck:
-      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-volumes:
-  mongodb_data:
-  node_modules:
+3. **Portas Expostas**:
+   - 3000: AdminJS (host) -> 3000 (container)
+   - 27018: MongoDB (host) -> 27017 (container)
+   - 9229: Debug Node.js
 ```
 
 ---
