@@ -1,52 +1,28 @@
 {
-  "name": "DOC Backend",
+  "name": "DOC AdminJS v7",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-  
-  // Portas a serem encaminhadas
-  "forwardPorts": [3000, 27017, 8081],
-  
-  // Configurações do VSCode e extensões recomendadas
+  "workspaceFolder": "/workspace",
   "customizations": {
-    "vscode": {
-      "extensions": [
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
-        "mongodb.mongodb-vscode",
-        "mikestead.dotenv",
-        "christian-kohler.npm-intellisense",
-        "formulahendry.auto-close-tag",
-        "formulahendry.auto-rename-tag",
-        "EditorConfig.EditorConfig",
-        "leaflet.leaflet-js-snippets",
-        "ms-azuretools.vscode-docker",
-        "RooVeterinaryInc.roo-cline"
-      ],
-      "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash",
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-          "source.fixAll.eslint": true
-        },
-        "html.suggest.html5": true,
-        "javascript.suggest.completeFunctionCalls": true
-      }
+   "vscode": {
+    "extensions": [
+     "dbaeumer.vscode-eslint",
+     "esbenp.prettier-vscode",
+     "mongodb.mongodb-vscode",
+     "christian-kohler.npm-intellisense",
+     "mikestead.dotenv",
+     "ms-azuretools.vscode-docker"
+    ],
+    "settings": {
+     "editor.formatOnSave": true,
+     "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+     }
     }
+   }
   },
-
-  // Comando executado após a criação do container
-  "postCreateCommand": "cd backend && npm install && npm install leaflet@1.9.4",
-
-  // Comando para iniciar o servidor
-  "postStartCommand": "cd backend && npm run dev",
-
-  // Usuário do container
-  "remoteUser": "node",
-
-  // Features adicionais do devcontainer
-  "features": {
-    "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/github-cli:1": {}
-  }
-}
+  "postCreateCommand": "/bin/sh -c 'cd /workspace/backend && npm install --legacy-peer-deps && node scripts/bundle-adminjs.js'",
+  // "postStartCommand": "cd /workspace/backend && npm run dev",
+  "forwardPorts": [3001, 27018, 9229],
+  "remoteUser": "node"
+ }
