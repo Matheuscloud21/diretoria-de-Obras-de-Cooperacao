@@ -68,9 +68,6 @@ backend/
 PORT=3000
 NODE_ENV=development
 
-# Frontend
-FRONTEND_DIR=/workspace # Diretório raiz do projeto
-
 # MongoDB
 MONGODB_URI=mongodb://root:root@db:27017/doc_db?authSource=admin&directConnection=true&retryWrites=false
 
@@ -86,27 +83,14 @@ SESSION_SECRET=9363
 
 ## 3. Implementação de Health Check
 
-### 3.1 Configuração do Servidor (server.js)
+### 3.1 Endpoint Obrigatório (server.js)
 ```javascript
 import express from 'express';
 import mongoose from 'mongoose';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const app = express();
 
-// Servir frontend estático
-app.use(express.static(process.env.FRONTEND_DIR));
-
-// Redirecionar raiz para index.html
-app.get('/', (req, res) => {
-  res.sendFile(path.join(process.env.FRONTEND_DIR, 'index.html'));
-});
-
-// Healthcheck endpoint
+// Healthcheck endpoint (PRIMEIRA ROTA)
 app.get('/health', (req, res) => {
   try {
     const isMongoConnected = mongoose.connection.readyState === 1;
@@ -167,9 +151,8 @@ process.on('unhandledRejection', (error) => {
 bundleAdminJS();
 ```
 
-## 5. Fluxo de Inicialização e Roteamento
+## 5. Fluxo de Inicialização
 
-### 5.1 Sequência de Inicialização
 ```mermaid
 sequenceDiagram
     participant Docker
@@ -184,32 +167,6 @@ sequenceDiagram
     NodeJS->>NodeJS: Executa bundle-adminjs.js
     NodeJS-->>Docker: Healthcheck /health OK
     Docker-->>Usuário: Container pronto
-```
-
-### 5.2 Fluxo de Roteamento
-```mermaid
-graph TD
-    A[Request] --> B{URL Path}
-    B -->|"/"| C[Serve index.html]
-    B -->|"/static/*"| D[Serve Frontend Files]
-    B -->|"/health"| E[Healthcheck]
-    B -->|"/admin"| F[AdminJS Interface]
-    C --> G[Frontend]
-    D --> G
-    E --> H[Status Check]
-    F --> I[Admin Panel]
-```
-
-### 5.3 Diagrama de Arquivos Servidos
-```mermaid
-graph LR
-    A[Express] --> B[Static Files]
-    B --> C[index.html]
-    B --> D[css/*]
-    B --> E[js/*]
-    B --> F[imagens/*]
-    A --> G[Admin Panel]
-    G --> H[/admin/*]
 ```
 
 ## 6. Validação e Checklist
