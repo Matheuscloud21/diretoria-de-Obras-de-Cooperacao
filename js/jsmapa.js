@@ -245,6 +245,190 @@ const obras = [
     orgaoFinanciador: 'Prefeitura de Araguari/MG',
     grupamento: 'DOC',
     coordenadas: [-18.6456, -48.1934] // Araguari/MG
+  },
+  {
+    om:'1° BATALHÃO DE ENGENHARIA FR CONSTRUÇÃO (1° BEC)',
+    nome: 'CREMA DA BR-226/RN',
+    ptrab: 94927964.95,
+    orgaoFinanciador: 'DNIT',
+    grupamento: '1º GPT E',
+    coordenadas: [-5.3972147,-41.5656592,12.48] // BR-226
+  },
+  {
+    om: '2° BATALHÃO DE ENGENHARIA DE CONSTRUÇÃO (2° BEC)',
+    nome: 'PATO BR 222/PI',
+    ptrab: 30409886.71,
+    orgaoFinanciador: 'DNIT',
+    grupamento: '1º GPT E',
+    coordenadas: [-3.6960798,-43.5852533,15] // BR-222
+  },
+  {
+    om:'7° BATALHÃO DE ENGENHARIA DE COMBATE (7° B E Cmb)',
+    nome: 'CONSERVAÇÃO BR-110-316/PE',
+    ptrab: 21533902.01,
+    orgaoFinanciador: 'DNIT',
+    grupamento: '1º GPT E',
+    coordenadas: [-7.0917606,-37.301139] // BR-110-316/PE
+  },
+  {
+    om: '3º BATALHÃO DE ENGENHARIA DE CONSTRUÇÃO (3º BEC)',
+    nome: 'CREMA DA BR-135/MA',
+    ptrab: 126079113.44,
+    orgaoFinanciador: 'DNIT',
+    grupamento: '1º GPT E',
+    coordenadas: [-11.4109313,-44.8985733,15] // BR-135/MA
+  },
+  {
+    om: '5º BATALHÃO DE ENGENHARIA DE CONSTRUÇÃO (5º BEC)',
+    nome: 'IMPLANTAÇÃO DAS VIAS LATERAIS DO RIO JARU NA BR 364-RO',
+    ptrab: 31961513.12,
+    orgaoFinanciador: 'DNIT',
+    grupamento: '2º GPT E',
+    coordenadas: [-10.4463411,-62.4748329,15] // BR-364/RO 
+  },
+  {
+    om: '8º BATALHÃO DE ENGENHARIA DE CONSTRUÇÃO (8º BEC)',
+    nome: 'IMPLANTAÇÃO DA BR 156/AP',
+    ptrab: 158229045.24,
+    orgaoFinanciador: 'DNIT',
+    grupamento: '2º GPT E',
+    coordenadas: [1.224273,-51.0204522,15] // BR-156/AP
+  },
+  {
+    om: '1° GRUPAMENTO DE ENGENHARIA (1°Gpt E)',
+    nome: 'PROJETO BÁSICO E EXECUTIVO DAS BR-110/316/PE',
+    ptrab: 3353959.62,
+    orgaoFinanciador: 'DNIT',
+    grupamento: '1º GPT E',
+    coordenadas: [-7.1785588,-37.3536388,11.3] // BR-110,316/PE
+  },
+  {
+    om: '1º BATALHÃO FERROVIÁRIO (1º B Fv)',
+    nome: 'SERVIÇOS DE ENGENHARIA REMANESCENTES DA BARRAGEM DE ARVOREZINHA EM BAGÉ/RS',
+    ptrab: 56120034.29,
+    orgaoFinanciador: 'PREF MUN BAGÉ/RS',
+    grupamento: '4º GPT E',
+    coordenadas: [-31.2927096,-54.1821758,15] // DAEB Barragem Arvorezinha
+  },
+  {
+    om: '2º BATALHÃO FERROVIÁRIO (2º B Fv)',
+    nome: 'DUPLICAÇÃO E RESTAURAÇÃO DA GO 213',
+    ptrab: 257688372.21,
+    orgaoFinanciador: 'GOV DO GOIÁS',
+    grupamento: '1º GPT E',
+    coordenadas: [-17.6959738,-48.5261647,15] // GO-213
+  },
+  {
+    om: '5° BATALHÃO DE ENGENHARIA DE COMBATE BLINDADO (5° BE Cmd BLD)',
+    nome: 'EMPREGO DA PONTE LSB SOBRE O RIO PEREQUÊ-SC',
+    ptrab: 823041.68,
+    orgaoFinanciador: 'SECRETARIA DA PROTEÇÃO E DEFESA CIVIL DE SANTA CATARINA',
+    grupamento: '4º GPT E',
+    coordenadas: [-27.146155,-48.5942944,16.65] // RIO PEREQUÊ 
+  },
+  {
+    om: '2º BATALHÃO FERROVIÁRIO (2º B Fv)',
+    nome: 'AQUISIÇÃO DE EQUIPAMENTO E VIATURA PARA A OBRA DA GO 213',
+    ptrab: 20588800.00,
+    orgaoFinanciador: 'GOV DO GOIÁS',
+    grupamento: '1º GPT E',
+    coordenadas: [-16.6453413,-49.2134305] // GO-213
+  },
+  {
+    om: '3º BATALHÃO DE ENGENHARIA E COMBATE (3º BE Cmb)',
+    nome: 'MOBILIZAÇÃO, MONTAGEM, DESMOTAGEM E DESMOBILIZAÇÃO DE PONTES METÁLICAS MÓVEIS UTILIZADAS NO REESTABELECIMENTO DE TRÉFEGO EM LOCAIS COM TRÁFEGO INTERROMPIDO PELO ESTADO DE CALAMIDADE PÚBLICA OCORRIDO NO ESTADO DE RIO GRANDE DO SUL.',
+    ptrab: 935903.37,
+    orgaoFinanciador: 'CMS',
+    grupamento: '4º GPT E',
+    coordenadas: [-30.0355792,-51.2392007] //  Rio Grande do Sul
+  },
+  {
+    om: '21ª COMPANHIA DE ENGENHARIA DE CONSTRUÇÃO (21ª Cia E Cnst)',
+    nome: 'MANUTENÇÃO EMERGENCIAL DA PISTA DE POUSO DO 2º PEF/5º BIS - QUERARI - 1ª FASE',
+    ptrab: 579098.71,
+    orgaoFinanciador: 'EME',
+    grupamento: '2º GPT E',
+    coordenadas: [0.6252363,-66.1350135] // 5° Pelotão Especial de Fronteira Maturacá
+  },
+  {
+    om: '9° BATALHÃO DE ENGENHARIA DE CONSTRUÇÃO (9° BEC)',
+    nome: 'CONSTRUÇÃO DA INFRAETRUTURA DA 18° BDA INF PAN EM CORUMBÁ-MS.',
+    ptrab: 31273779.40,
+    orgaoFinanciador: 'PRENG/SISFRON',
+    grupamento: '3º GPT E',
+    coordenadas: [-19.0002351,-57.6693609] // 18ª Brigada de Infantaria de Pantanal
+  },
+  {
+    om: '4º BATALHÃO DE ENGENHARIA DE CONSTRUÇÃO (4º BEC)',
+    nome: 'CONSTRUÇÃO DA INFRAESTRUTURA DO NOVO HMAB',
+    ptrab: 5101111.81,
+    orgaoFinanciador: 'PPRENG',
+    grupamento: '1º GPT E',
+    coordenadas: [-15.7725749,-47.9403027] // Hospital Militar de Área de Brasília
+  },
+  {
+    om: '7º BATALHÃO DE ENGENHARIA DE CONSTRUÇÃO (7º BEC)',
+    nome: 'READEQUAÇÃO DO AERÓDROMO DE SANTA ROSA DO PURUS',
+    ptrab: 74669368.58,
+    orgaoFinanciador: 'EME/EMANDA PARLAMENTAR',
+    grupamento: '2º GPT E',
+    coordenadas: [-9.4426095,-70.4947622] // Santa Rosa do Purus Airport
+  },
+  {
+    om: '9º BATALHÃO DE ENGENHARIA E COMBATE (9º BE Cmb)',
+    nome: 'LANÇAMENTO DE PONTE NO CAMPO DE PROVAS BRIGADEIRO VELOSO, EM APOIO À FAB',
+    ptrab: 710862.24,
+    orgaoFinanciador: 'FAB',
+    grupamento: '4º GPT E',
+    coordenadas: [-9.3364932,-54.9674159] // Cpbv Proving Ground Brigadeiro Veloso
+  },
+  {
+    om: '1º BATALHÃO DE ENGENHARIA E COMBATE (1º BE Cmb)',
+    nome: 'REVITALIZAÇÃO DA INFRAESTRUTURA DO DC MUN',
+    ptrab: 3342647.20,
+    orgaoFinanciador: 'PPRENG/SISFRON',
+    grupamento: '1º GPT E',
+    coordenadas: [-22.6539722,-43.7272376] // Ammunition Depot Center
+  },
+  { 
+    om: '6° BATALHÃO DE ENGENHARIA DE CONSTRUÇÃO (6° BEC)',
+    nome: 'CONSTRUÇÃO DO PÁTIO DO CECMA-OP PEDRO TEIXEIRA',
+    ptrab: 6857937.35,
+    orgaoFinanciador: 'EME/SISFRON',
+    grupamento: '2º GPT E',
+    coordenadas: [-3.0814609,-60.0825798] // Exército Brasileiro — Centro de Embarcações do Comando Militar da Amazônia (CECMA)
+  },
+  {
+    om: '3º BATALHÃO DE ENGENHARIA E COMBATE (3º BE Cmb)',
+    nome: 'ERS 130 ENTRE LAGEADO/RS E ARROIO DO MEIO/RS (RIO FORQUETA)',
+    ptrab: 935903.37,
+    orgaoFinanciador: 'SEDEC',
+    grupamento: '4º GPT E',
+    coordenadas: [-29.4126698,-51.9863917] // Estiva do Rio Forqueta
+  },
+  {
+    om: '7º BATALHÃO DE ENGENHARIA E COMBATE (7º BE Cmb)',
+    nome: 'LANÇAMENTO, OPERAÇÃO E MANUTENÇÃO DE PONTE NA BR 135/BA (EM TRANSIÇÃO DA FIOL)',
+    ptrab: 890085.78,
+    orgaoFinanciador: 'DNIT',
+    grupamento: '4º GPT E',
+    coordenadas: [-12.9677496,-50.5314259] // PONTILHÃO FERROVIA NORTE-SUL
+  },
+  {
+    om: '2° BATALHÃO DE ENGENHARIA DE CONTRUÇÃO (2° BEC)',
+    nome: 'RDV MA 317 - CAJARI/MA',
+    ptrab: 669650.29,
+    orgaoFinanciador: 'MDR/COTER',
+    grupamento: '4º GPT E',
+    coordenadas: [-3.3202884,-45.0095708] // MA-317
+  },
+  {
+    om: 'DEPARTAMENTO DE ENGENHARIA E CONTRUÇÃO E DIRETORIA DE OBRAS DE COOPERAÇÃO (DEC/DOC)',
+    nome: 'EMPREGO DAS PONTES LSB',
+    ptrab: 50116272.71,
+    orgaoFinanciador: 'DNIT',
+    grupamento: 'DOC',
+    coordenadas: []
   }
 ];
 
