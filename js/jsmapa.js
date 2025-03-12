@@ -428,7 +428,6 @@ const obras = [
     ptrab: 50116272.71,
     orgaoFinanciador: 'DNIT',
     grupamento: 'DOC',
-    coordenadas: []
   }
 ];
 
