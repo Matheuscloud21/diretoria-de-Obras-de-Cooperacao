@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
   margin: 0;
   padding: 0;
@@ -403,3 +404,410 @@ footer{
 
   gap: 10px;
 }
+=======
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+html, body{
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+}
+
+header #navbar {
+  flex-direction: column;
+
+  position: relative;
+
+  padding-bottom: 5px;
+
+  box-shadow: rgba(187, 181, 181, 0.2) 0px 2px 2px 0px;
+  background-color: white;
+}
+
+header #nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 80px;
+
+  background-color: white;
+}
+
+header #nav-top .logo-pesquisa {
+  display: flex;
+  align-items: center;
+
+  background: white;
+}
+
+.logo-pesquisa img {
+  background: white;
+}
+
+.logo-pesquisa a {
+  background: white;
+}
+
+.logo-pesquisa .nav-brand {
+  text-decoration: none;
+  color: #207ca8;
+
+  padding-left: 2rem;
+
+  background-color: white;
+}
+
+.vertical-line {
+  border-left: 1px solid #cccccc;
+  height: 50px;
+
+  margin-left: 2rem;
+}
+
+.vertical-line-dois {
+  border-left: 1px solid #cccccc;
+  height: 50px;
+}
+
+.nav-list {
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  background-color: white;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #207ca8;
+
+  background-color: white;
+}
+
+#nav-buttom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.nav-right h2 {
+  background: white;
+}
+
+.nav-right h4 {
+  background: white;
+}
+
+.nav-list li {
+  background: white;
+}
+
+/* BOTÃO DE PESQUISA */
+
+.search-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 10px;
+
+  background: #d9d9d9;
+  width: 385px;
+  height: 56px;
+  border-radius: 20px;
+
+  transition: 0.5s;
+}
+
+.search-text {
+  border: none;
+  background: #d9d9d9;
+  outline: none;
+  border-radius: 20px;
+
+  height: 56px;
+  width: 385px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.search-btn {
+  height: 56px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #d9d9d9;
+}
+
+.search-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.search-box:hover {
+  width: 500px;
+}
+
+/* NOTICIAS DA PAGINA */
+
+main {
+  width: 100%;
+  margin:3rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+main img{
+  width: 600px;
+  height: 400px;
+  border: 2px solid #0e3041;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.container-map{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 15px;
+  padding-bottom: 20px;
+}
+
+.container-map iframe{
+  padding-left: 20px;
+}
+
+@media (max-width: 1100px) {
+  .container-map{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .container-map iframe{
+    padding-top: 20px;
+    padding-left: 0;
+  }
+}
+
+/* BALÃO FLUTUANTE */
+
+.balao {
+  position: relative; 
+  top: 0%;
+  left: 100px;
+  background-color: #fff;
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  padding: 15px;
+  width: 340px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+  }
+
+.balao:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #0c3f58; /* Cor da seta */
+  transform: translateY(-50%);
+}
+
+
+
+@media (max-width:1100px) {
+  .container-box{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+  }
+
+  .balao{
+    top: 10px;
+    left: 10px;
+  }
+}
+
+/* FORMULARIO DE ENVIO DE MENSAGEM */
+
+.container-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+  width: 100%;
+  padding-top: 20px ;
+}
+
+.form-box{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid rgb(153, 153, 153) ;
+  width: 500px;
+}
+
+.form-box .title-form{
+  padding: 5px 12px;
+  font-size: 24px;
+  border-bottom: thin solid #ccc;
+}
+
+.form-box form{
+  display: flex;
+  align-items: start;
+  flex-wrap: wrap;
+  padding: 12px;
+}
+
+.form-box input,
+.form-box textarea{
+  width: calc(50% - 8px);
+  height: 38px;
+  border-radius: 8px;
+  border: thin solid #999;
+  padding-left: 16px;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.form-box input:first-child{
+  margin-right: 6px;
+}
+
+.form-box input[name=subject]{
+  width: 100%;
+}
+
+.form-box textarea{
+  width: 100%;
+  height: 180px;
+  padding: 16px;
+}
+
+.form-box button{
+  display: block;
+  border: none;
+  outline: none;
+  width: 180px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #16678E;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: ease 0.8s;
+}
+
+.form-box button:hover{
+  background-color: #0c3f58;
+}
+
+
+/* RODAPE */
+
+footer{
+  margin-top: auto;
+}
+
+.rodape-classe-2{
+  width: 100%;
+  height: 110px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #16678E;
+  color: white;
+
+  box-shadow: -webkit-box-shadow 0px -2px 24px 1px rgba(0,0,0,0.34);
+  -moz-box-shadow: 0px -2px 24px 1px rgba(0,0,0,0.34);
+  box-shadow: 0px -2px 24px 1px rgba(0,0,0,0.34);
+}
+
+.left, .right {
+  flex: 1px;
+  width: 100px;
+  height: 110px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle {
+  width: 80%;
+  height: 110px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column
+
+}
+
+.middle h3{
+  width: 300px;
+
+  display: flex;
+  justify-content: center;
+
+}
+.middle img{
+  width: 20px;
+  height: 20px;
+
+  transition: all 0.3s ease;
+}
+
+.middle img:hover{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #c7c7c7;
+}
+
+.logo-redessociais{
+  width: 300px;
+  padding-top: 8px;
+  display: flex;
+  justify-content: center;
+
+  gap: 10px;
+}
+>>>>>>> 8b2bcb1891a14ea629320f1bc04f9438dedd163f

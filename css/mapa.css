@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Estilos para o mapa */
 #map {
     height: 600px;
@@ -82,4 +83,90 @@
     .popup-obra {
         min-width: 250px;
     }
+=======
+/* Estilos para o mapa */
+#map {
+    height: 600px;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Estilos para o popup */
+.popup-obra {
+    padding: 10px;
+    min-width: 280px;
+    font-family: Arial, sans-serif;
+}
+
+.popup-obra p {
+    margin: 8px 0;
+    color: #333;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.popup-obra strong {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* Estilos para a legenda */
+.legenda-mapa {
+    background: white;
+    padding: 12px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    margin: 10px;
+}
+
+.legenda-mapa h4 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.legenda-item {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.legenda-item span {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: inline-block;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.legenda-item label {
+    color: #333;
+    font-size: 12px;
+}
+
+/* Efeito hover nos marcadores */
+.trator-icon div {
+    transition: transform 0.2s ease;
+}
+
+.trator-icon div:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    #map {
+        height: 450px;
+    }
+    
+    .popup-obra {
+        min-width: 250px;
+    }
+>>>>>>> 8b2bcb1891a14ea629320f1bc04f9438dedd163f
 }
