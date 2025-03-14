@@ -1,0 +1,5 @@
+{
+    "terminal.integrated.shellIntegration.enabled": true,
+    "liveServer.settings.multiRootWorkspaceName": "diretoria-de-Obras-de-Cooperacao",
+    "liveServer.settings.CustomBrowser": "chrome"
+}

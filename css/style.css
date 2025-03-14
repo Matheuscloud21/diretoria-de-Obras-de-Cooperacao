@@ -1,0 +1,540 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header #navbar {
+  flex-direction: column;
+
+  position: relative;
+
+  padding-bottom: 5px;
+
+  box-shadow: rgba(187, 181, 181, 0.2) 0px 2px 2px 0px;
+  background-color: white;
+}
+
+header #nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 80px;
+
+  background-color: white;
+}
+
+header #nav-top .logo-pesquisa {
+  display: flex;
+  align-items: center;
+
+  background: white;
+}
+
+.logo-pesquisa img {
+  background: white;
+}
+
+.logo-pesquisa a {
+  background: white;
+}
+
+.logo-pesquisa .nav-brand {
+  text-decoration: none;
+  color: #207ca8;
+
+  padding-left: 2rem;
+
+  background-color: white;
+}
+
+.vertical-line {
+  border-left: 1px solid #cccccc;
+  height: 50px;
+
+  margin-left: 2rem;
+}
+
+.vertical-line-dois {
+  border-left: 1px solid #cccccc;
+  height: 50px;
+}
+
+.nav-list {
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  background-color: white;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #207ca8;
+
+  background-color: white;
+}
+
+#nav-buttom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.nav-right h2 {
+  background: white;
+}
+
+.nav-right h4 {
+  background: white;
+}
+
+.nav-list li {
+  background: white;
+}
+
+/* BOTÃO DE PESQUISA */
+
+.search-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 10px;
+
+  background: #d9d9d9;
+  width: 385px;
+  height: 56px;
+  border-radius: 20px;
+
+  transition: 0.5s;
+}
+
+.search-text {
+  border: none;
+  background: #d9d9d9;
+  outline: none;
+  border-radius: 20px;
+
+  height: 56px;
+  width: 385px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.search-btn {
+  height: 56px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #d9d9d9;
+}
+
+.search-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.search-box:hover {
+  width: 500px;
+}
+
+/* NOTICIAS DA PAGINA */
+
+main {
+  width: 100%;
+  height: 550px;
+  flex: 1;
+}
+
+.new-container {
+  display: flex;
+  height: 100%;
+  padding: 0 5px;
+}
+
+#big-left {
+  width: 45%;
+  height: 100%;
+  margin-right: 5px;
+  background: black;
+}
+
+.linha-vertical {
+  width: 10%;
+  height: 5px;
+  background-color: #e5a000;
+  transition: width 0.5s ease;
+  filter: none;
+}
+
+.quadrado-link {
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  padding: 14px;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.big-right {
+  width: 55%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cima {
+  width: 100%;
+  height: 60%;
+
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+}
+
+.baixo {
+  width: 100%;
+  height: 40%;
+
+  display: flex;
+  flex-direction: row;
+}
+
+#quadrado-um {
+  padding: 14px;
+  width: 100%;
+  height: 100%;
+  background-image: url("../imgnews/GO213/CAPA\ GO\ 213.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 5.5);
+
+  font-size: 20px;
+  font-style: normal;
+}
+
+#quadrado-dois {
+  padding: 14px;
+  background-image: url("../imgnews/BR-135/capa-br135.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#quadrado-tres {
+  padding: 14px;
+  background-image: url("../imgnews/VISITA-DA-COMITIVA/VISITA-DA-COMITIVA-DO-EXÉRCITO-CAPA.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#quadrado-quatro {
+  padding: 14px;
+  background-image: url("../imgnews/BR-222/CAPA.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#quadrado-cinco {
+  padding: 14px;
+  background-image: url("../imgnews/VISITA-DO-GEN-DAVID/VISITA-DO-GEN-DAVID-NA-DOC-CAPA.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#quadrado-seis {
+  padding: 14px;
+  background-image: url("../imgnews/BR-367/capa.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.quadrado {
+  flex: 1;
+  height: 100%;
+  margin-right: 5px;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 5.5);
+  background-color: rgb(0, 0, 0);
+  transition: 0.5s ease;
+  cursor: pointer;
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.quadrado:hover {
+  filter: grayscale(0.8);
+}
+
+.quadrado:hover .linha-vertical {
+  filter: none !important; /* Garante que o filtro seja removido no hover */
+}
+
+.horizontal-line {
+  width: 550px;
+  height: 2px;
+  background-color: #cccccc;
+  margin: 0 20px;
+}
+
+#central-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+  color: #333333;
+}
+
+.container-central-conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1200px;
+  height: 600px;
+  justify-content: space-evenly;
+  align-content: space-around;
+  margin: 0 auto;
+  border: 1px solid #207ca8;
+  background-color: #207ca8;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  border-radius: 12px;
+}
+
+.central-quadrado {
+  position: relative;
+  width: 240px;
+  height: 220px;
+  background-color: #1e769e;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid white;
+  border-radius: 15px;
+  z-index: 1;
+
+  transition: 0.5s ease;
+}
+
+.central-quadrado:hover {
+  background-color: #1c6385;
+}
+
+.central-quadrado a {
+  text-decoration: none;
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: inherit;
+  background: transparent;
+  background-color: transparent;
+}
+
+.central-quadrado img {
+  width: 180px;
+  height: 70px;
+
+  margin-bottom: 20px;
+}
+
+#img-regular {
+  width: 86px;
+  height: 70px;
+}
+
+#img-regular-um {
+  width: 108px;
+  height: 93px;
+}
+
+#img-regular-dois {
+  margin-bottom: 0px;
+  width: 86px;
+  height: 70px;
+}
+
+#Eng-regular {
+  padding-top: 10px;
+}
+
+.central-quadrado h6 {
+  display: flex;
+  justify-content: center;
+
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* MAPA */
+
+ .mapa {
+  margin: 0 auto;
+  width: 50%;
+  height: 675px;
+  /* background-image: url("../imagens/Mapa.png"); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} 
+
+#map {
+  width: 100%;
+  height: 600px;
+  border: 2px solid #000;
+  border-radius: 10px;
+}
+
+/* RODAPE */
+
+footer{
+  margin-top: auto;
+}
+
+.rodape-classe-1{
+  width: 100%;
+  height: 200px;
+
+  display: flex;
+  justify-content: space-around;
+
+  background-color: #207CA8;
+  color: white;
+}
+
+.rodape-classe-1 a{
+  text-decoration: none;
+  color: white;
+  letter-spacing: 2px;
+  padding-top: 10px;
+}
+
+.classe-left{
+  display: flex;
+  flex-direction: column;
+  padding-top: 41px;
+  
+}
+
+.class-right{
+  display: flex;
+  flex-direction: column;
+  padding-top: 41px;
+}
+
+.rodape-classe-2{
+  width: 100%;
+  height: 110px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #16678E;
+  color: white;
+
+  box-shadow: -webkit-box-shadow 0px -2px 24px 1px rgba(0,0,0,0.34);
+  -moz-box-shadow: 0px -2px 24px 1px rgba(0,0,0,0.34);
+  box-shadow: 0px -2px 24px 1px rgba(0,0,0,0.34);;
+}
+
+.left, .right {
+  flex: 1px;
+  width: 100px;
+  height: 110px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle {
+  width: 80%;
+  height: 110px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column
+
+}
+
+.middle h3{
+  width: 300px;
+
+  display: flex;
+  justify-content: center;
+
+}
+.middle img{
+  width: 20px;
+  height: 20px;
+
+  transition: all 0.3s ease;
+}
+
+.middle img:hover{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #c7c7c7;
+}
+
+.logo-redessociais{
+  width: 300px;
+  padding-top: 8px;
+  display: flex;
+  justify-content: center;
+
+  gap: 10px;
+}

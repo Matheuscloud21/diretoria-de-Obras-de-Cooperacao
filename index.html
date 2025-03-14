@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOC - Diretoria de Obras de Cooperação</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="imagens/Distintivo_DOC.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/mapa.css" />
+    
+    <!-- CRIEI ESSE CODIGO USANDO MEU AMIGO CHAT GPT, NÂO ME JULGUE PRINCIPALMENTE O JAVASCRIPT  -->
+    <!-- BOA SORTE -->
+    
+  </head>
+  <body>
+    <header>
+      <nav id="navbar">
+        <div id="nav-top">
+          <div class="logo-pesquisa">
+            <a href="#">
+              <img src="imagens/Distintivo_DOC.png" alt="" width="50px" />
+            </a>
+            <div class="vertical-line" id="linha-um"></div>
+            <a
+              class="nav-brand"
+              href="https://www.gov.br/defesa/pt-br"
+              target="_blank"
+              >Ministério da Defesa</a
+            >
+          </div>
+          <div id="barra-navegacao">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a
+                  href="https://www.gov.br/pt-br/orgaos-do-governo"
+                  target="_blank"
+                  >Órgãos do Governo</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a
+                  href="https://www.gov.br/acessoainformacao/pt-br"
+                  target="_blank"
+                  >Acesso á Informações</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a
+                  href="https://www4.planalto.gov.br/legislacao"
+                  target="_blank"
+                  >Legislação</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a
+                  href="https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital"
+                  target="_blank"
+                  >Acessibilidade</a
+                >
+              </li>
+              <div class="vertical-line-dois"></div>
+            </ul>
+          </div>
+        </div>
+
+        <div id="nav-buttom">
+          <div class="nav-right">
+            <h2>Diretoria de Obras de Cooperação</h2>
+            <h4>Exército Brasileiro</h4>
+          </div>
+          <div class="search-box">
+            <input class="search-text" type="text" placeholder="Pesquisar..." />
+            <a class="search-btn" href="#">
+              <img src="imagens/Lupa.svg" alt="Lupa" />
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+        <!-- Noticia 01 -->
+      <div class="new-container">
+        <div class="big-left" id="big-left">
+          <div class="quadrado" id="quadrado-um">
+            <div class="linha-vertical"></div>
+            <a href="./paginas/paginasnews/paginanew01.html" class="quadrado-link">
+              <h5>
+                Duplicação e Restauração da Rodovia GO-213
+              </h5>
+            </a>
+          </div>
+        </div>
+        <div class="big-right">
+          <div class="cima">
+            <div class="quadrado" id="quadrado-dois">
+              <div class="linha-vertical"></div>
+              <a href="./paginas/paginasnews/paginanew02.html" class="quadrado-link">
+                <h5>CREMA da BR 135/MA</h5>
+              </a>
+            </div>
+            <div class="quadrado" id="quadrado-tres">
+              <div class="linha-vertical"></div>
+              <a href="./paginas/paginasnews/paginanew03.html" class="quadrado-link">
+                <h5>VISITA DO COMANDANTE DO COMANDO DE ENGENHARIA DO EXÉRCITO DO PARAGUAI</h5>
+              </a>
+            </div>
+          </div>
+          <div class="baixo">
+            <div class="quadrado" id="quadrado-quatro">
+              <div class="linha-vertical"></div>
+              <a href="./paginas/paginasnews/paginanew04.html" class="quadrado-link">
+                <h5>Manutenção na BR-222/PI</h5>
+              </a>
+            </div>
+            <div class="quadrado" id="quadrado-cinco">
+              <div class="linha-vertical"></div>
+              <a href="./paginas/paginasnews/paginanew05.html" class="quadrado-link">
+                <h5>Visita do Chefe do Departamento de Engenharia e Construção</h5>
+              </a>
+            </div>
+            <div class="quadrado" id="quadrado-seis">
+              <div class="linha-vertical"></div>
+              <a href="./paginas/paginasnews/paginanew06.html" class="quadrado-link">
+                <h5>Implantação BR-367/MG</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="js/index.js"></script>
+      <div id="central-conteudo">
+        <div class="horizontal-line"></div>
+        <h1>Central de Conteúdos</h1>
+        <div class="horizontal-line"></div>
+      </div>
+
+      <div class="container-central-conteudo">
+        <div class="central-quadrado">
+          <a href="./paginas/diretor-obras.html">
+            <img src="./imagens/DiretorDeObras.png" alt="Diretor de Obras" />
+            <h6>Diretor de Obras</h6>
+          </a>
+        </div>
+        <div class="central-quadrado">
+          <a href="./paginas/historico.html">
+            <img src="./imagens/historico.png" alt="Histórico" id="img-regular" />
+            <h6>Histórico</h6>
+          </a>
+        </div>
+        <div class="central-quadrado">
+          <a href="./paginas/missao-visao.html">
+            <img
+              src="./imagens/Missao.png"
+              alt="Missão / Visão"
+              id="img-regular"
+            />
+            <h6>Missão / Visão</h6>
+          </a>
+        </div>
+        <!-- <div class="central-quadrado">
+          <a href="./paginas/om-engenharia.html">
+            <img
+              src="./imagens/OmEngenharia.png"
+              alt="OM de Engenharia"
+              id="img-regular"
+            />
+            <h6>OMs de Engenharia</h6>
+          </a>
+        </div> -->
+
+        <div class="central-quadrado">
+          <a href="./paginas/galeria-eternos-diretores.html">
+            <img
+              src="./imagens/General.png"
+              alt="Galeria dos Eternos Diretores"
+              id="img-regular-um"
+            />
+            <h6>Galeria dos Eternos Diretores</h6>
+          </a>
+        </div>
+        <div class="central-quadrado">
+          <a href="./paginas/galeria-historica.html">
+            <img
+              src="./imagens/GaleriaHistorica.png"
+              alt="Galeria Histórica"
+              id="img-regular"
+            />
+            <h6>Galeria Histórica</h6>
+          </a>
+        </div>
+        <div class="central-quadrado">
+          <a href="./paginas/engenharia-desenvolvimento-nascional.html">
+            <img
+              src="./imagens/pilha-de-tres-livros.png"
+              alt="Engenharia no Desenvolvimento Nascional"
+              id="img-regular-dois"
+            />
+            <h6 id="Eng-regular">Livro da Engenharia <br>no Desenvolvimento Nacional</h6>
+          </a>
+        </div>
+        <div class="central-quadrado">
+          <a href="./paginas/contato.html">
+            <img src="./imagens/contato.png" alt="Contato" id="img-regular" />
+            <h6>Contato</h6>
+          </a>
+        </div>
+      </div>
+      <div id="central-conteudo">
+        <div class="horizontal-line"></div>
+        <h1>Obras em Andamento</h1>
+        <div class="horizontal-line"></div>
+      </div>
+
+      <div class="mapa">
+          <div id="map"></div>
+          <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+          <script src="js/jsmapa.js"></script>
+      </div>
+
+      <div class="rodape">
+        <div class="rodape-classe-1">
+          <div class="classe-left">
+            <h2>Informações</h2>
+            <a href="#">Licitações</a>
+            <a href="#">Convênio do DEC</a>
+          </div>
+          <div class="class-right">
+            <h2>Links Externos</h2>
+            <a target="_blank" href="https://www.gov.br/defesa/">Ministério da Defesa</a>
+            <a target="_blank" href="https://www.eb.mil.br/">Exército</a>
+            <a target="_blank" href="http://www.dec.eb.mil.br/">DEC</a>
+          </div>
+        </div>
+
+        <div class="rodape-classe-2">
+            <div class="left">
+              <a href="#"><img src="imagens/logo_exercito.png" alt="Logo Exécito" width="50px"></a>
+            </div>
+            <div class="middle">
+              <h3>Redes Sociais</h3>
+              <div class="logo-redessociais">
+                <a href="https://www.linkedin.com/company/exercito" target="_blank"><img src="imagens/linkedin.png" alt="logo-linkedin"></a>
+                <a href="https://www.facebook.com/exercito" target="_blank"><img src="imagens/facebook.png" alt="logo-facebook"></a>
+                <a href="https://www.youtube.com/user/CCSE1982" target="_blank"><img src="imagens/youtube.png" alt="logo-youtube"></a>
+              </div>
+            </div>
+            <div class="right">
+              <a href="https://www.gov.br/acessoainformacao/pt-br" target="_blank"><img src="imagens/acesso_a_informacao_logo.png" alt="Acesso Informações" width="100px"></a>
+            </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
