@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/workspace:cached
+      - adminjs-node-modules:/workspace/backend/node_modules
+    environment:
+      - NODE_ENV=development
+      - PORT=3000  # ⭐️ Adicionado para definir explicitamente a porta
+      - MONGODB_URI=mongodb://root:root@db:27017/doc_db?authSource=admin&directConnection=true&retryWrites=false
+      - ADMINJS_WATCH=true
+      - COOKIE_SECRET=${COOKIE_SECRET:-your-secret-key}
+      - SESSION_SECRET=${SESSION_SECRET:-your-session-secret}
+      - ADMINJS_BUNDLE_PATH=/workspace/backend/public/admin
+      - ADMINJS_ROOT_PATH=/admin
+      - FRONTEND_DIR=/workspace
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    depends_on:
+      db:
+        condition: service_healthy
+    command: bash -c "sleep 5 && cd /workspace/backend && npm run dev"  # ⭐️ Adicionado delay
+    user: node
+
+  db:
+    image: mongo:6.0.11
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: doc_db
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongodb-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "-u", "root", "-p", "root", "--authenticationDatabase", "admin", "--eval", "db.adminCommand('ping')"]  # ⭐️ Comando corrigido
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 60s  # ⭐️ Tempo aumentado
+    command: mongod --bind_ip_all
+
+volumes:
+  mongodb-data:
+  adminjs-node-modules:

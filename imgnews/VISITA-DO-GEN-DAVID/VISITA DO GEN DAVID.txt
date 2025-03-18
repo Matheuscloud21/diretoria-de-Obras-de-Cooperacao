@@ -1,0 +1,4 @@
+titulo: Visita do Chefe do Departamento de Engenharia e Contrução.
+
+texto: O principal objetivo do Sr Chefe do DEC é percorrer a Diretoria, conversar com os integrantes de cada uma das Seções, ouvir sobre o trabalho que realizam.
+

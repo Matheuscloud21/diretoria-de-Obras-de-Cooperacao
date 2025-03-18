@@ -1,0 +1,30 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "echo '🎯 Iniciando em modo desenvolvimento...' && nodemon --watch src server.js",
+    "start": "echo '🚀 Iniciando em modo produção...' && node server.js",
+    "bundle": "echo '📦 Iniciando bundle...' && node scripts/bundle-adminjs.js"
+  },
+  "dependencies": {
+    "adminjs": "^7.0.0",
+    "@adminjs/express": "^6.0.0",
+    "@adminjs/mongoose": "^4.0.0",
+    "@adminjs/upload": "^4.0.0",
+    "@adminjs/design-system": "^4.0.0",
+    "@adminjs/bundler": "^3.0.0",
+    "express": "^4.18.2",
+    "express-formidable": "^1.2.0",
+    "express-session": "^1.17.3",
+    "connect-mongo": "^5.0.0",
+    "mongoose": "^7.6.0",
+    "nodemon": "^3.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-react": "^7.22.15"
+  }
+}
